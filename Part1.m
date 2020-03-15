@@ -96,10 +96,7 @@ for i= 1 : iterations
     initialX=NextX;
     initialY=NextY;
 end
-
-
     %plot of Temperature vs time
-
     figure(2);
     plot(temp,TempArray)
     title('Average Temperature')
@@ -114,11 +111,9 @@ end
     xlabel('Time')
     ylabel('Current')
     hold on
-
-    %for density, divide the L and W into a grid, step through grid points
-    %to see how many electrons are in each grid point
     [X Y]=meshgrid(0:L/10:L,0:W/10:W);  %grid for stepping by 1/10 of width and length
-    %created an 11 x 11 vectors
+    %X and Y area 11x11 doubles, need to create Density and Temp matrices
+    %the same size. 
     Dense=zeros(11,11);                 %will hold the density per nm
     Temp=zeros(11,11);                  %holds temperature per nm
     Tcount=0;                           %initilaize to 0
